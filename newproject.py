@@ -12,3 +12,4 @@ def mul(a,b):
 print("addition :", add(10, 5))
 print("subtraction:", sub(10, 2))
 print("multiplication:", mul(2, 3))
+print("my project completed")
