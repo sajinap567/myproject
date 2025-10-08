@@ -28,4 +28,10 @@ urlpatterns = [
     path('review/', views.review),
     path('department/', views.department),
     path('doctors/', views.doctors),
+    path('contact/', views.contact_view, name='contact'),
+    path('book', views.list_books, name='book-list'),
+    path('books/add/', views.create_book, name='book-create'),
+    path('books/<int:pk>/edit/', views.update_book, name='book-update'),
+    path('books/<int:pk>/delete/', views.delete_book, name='book-delete'),
+
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

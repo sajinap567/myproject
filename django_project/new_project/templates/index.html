@@ -1,9 +1,11 @@
-{% extends "base.html" %}
 
+{% extends "base.html" %}
+{% load static %}
 {% block title%}
 Home 
 {%endblock%}
 
 {% block content%}
 <h1> Home page </h1>
+<img src="{% static 'images/example.jpg' %}" alt="Example image" width="900" height="700"/>
 {% endblock%}

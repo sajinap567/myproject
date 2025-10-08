@@ -13,3 +13,14 @@ class Doctors(models.Model):
     doc_spec = models.CharField(max_length=255)
     dep_name = models.ForeignKey(Departments,on_delete=models.CASCADE)
     doc_image = models.ImageField(upload_to='doctors')
+
+
+
+
+
+class Book(models.Model):
+    patient = models.CharField(max_length=255)
+    doc_name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.patient

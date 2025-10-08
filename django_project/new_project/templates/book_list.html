@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title%}
+Booking list
+{%endblock%}
+
+{% block content%}
+<h2>Booking List</h2>
+<ul>
+  {% for book in books %}
+    <li>{{ book.patient }} by {{ book.doc_name }}</li>
+  {% empty %}
+    <li>No booking available.</li>
+  {% endfor %}
+</ul>
+{% endblock%}
