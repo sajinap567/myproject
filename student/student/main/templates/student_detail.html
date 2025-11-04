@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Details</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f0f0f0; padding: 20px; }
+        .card { background: white; padding: 20px; border-radius: 8px; max-width: 500px; margin: 0 auto; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        h2 { text-align: center; color: #333; }
+        p { font-size: 16px; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>{{ student.name }}</h2>
+        <p><strong>Roll No:</strong> {{ student.roll_no }}</p>
+        <p><strong>Course:</strong> {{ student.course }}</p>
+        <p><strong>Marks:</strong> {{ student.marks }}</p>
+        <p><strong>Admission Date:</strong> {{ student.admission_date }}</p>
+        <p><strong>Status:</strong> 
+            {% if student.is_pass %}
+                ✅ Pass
+            {% else %}
+                ❌ Fail
+            {% endif %}
+        </p>
+        <p><strong>Full Details:</strong> {{ student.full_details }}</p>
+        <a href="{% url 'student_list' %}">← Back to List</a>
+    </div>
+</body>
+</html>

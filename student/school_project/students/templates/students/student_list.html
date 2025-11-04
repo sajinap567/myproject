@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Students</title>
+</head>
+<body>
+    <h1>All Students</h1>
+    <a href="{% url 'student_add' %}">Add New Student</a>
+    <ul>
+        {% for student in students %}
+            <li>{{ student.full_name }} - Roll No: {{ student.roll_no }} - Adult: {{ student.is_adult }}</li>
+        {% empty %}
+            <li>No students found.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

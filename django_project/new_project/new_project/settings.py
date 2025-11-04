@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'new_app'
+    'new_app',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -68,6 +69,9 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'new_project.wsgi.application'
+
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/login/'  # or wherever your login page is
 
 
 # Database

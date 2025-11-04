@@ -20,6 +20,9 @@ from new_app import views
 from django.conf.urls.static import static
 from xml.dom.minidom import Document
 from django.conf import settings
+from django.urls import path, include
+from django.contrib.auth import views as auth_views
+from django.shortcuts import redirect
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('next/',views.print_hello),
@@ -33,5 +36,10 @@ urlpatterns = [
     path('books/add/', views.create_book, name='book-create'),
     path('books/<int:pk>/edit/', views.update_book, name='book-update'),
     path('books/<int:pk>/delete/', views.delete_book, name='book-delete'),
-
+    path('', views.home_view, name='home'),  
+    path('accounts/', include('accounts.urls')),  # Our custom app
+    path('login/', views.login_view, name='login'),
+    path('logout/', views.logout_view, name='logout'),
+    path('dashboard/', views.dashboard, name='dashboard'),
+     path('change-password/', views.change_password, name='change_password'),
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

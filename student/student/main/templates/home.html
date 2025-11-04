@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Authors and Books (One-to-Many)</h2>
+{% for author in authors %}
+  <h4>{{ author.name }}</h4>
+  <ul>
+    {% for book in author.books.all %}
+      <li>{{ book.title }}</li>
+    {% empty %}
+      <li>No books yet.</li>
+    {% endfor %}
+  </ul>
+{% empty %}
+  <p>No authors.</p>
+{% endfor %}
+
+<hr>
+
+<h2>Students and Courses (Many-to-Many)</h2>
+{% for student in students %}
+  <h4>{{ student.name }}</h4>
+  <ul>
+    {% for course in student.courses.all %}
+      <li>{{ course.name }}</li>
+    {% empty %}
+      <li>No courses enrolled.</li>
+    {% endfor %}
+  </ul>
+{% empty %}
+  <p>No students.</p>
+{% endfor %}
+{% endblock %}
