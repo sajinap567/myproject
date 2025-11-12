@@ -1,0 +1,16 @@
+{% extends 'textile/base.html' %}
+{% block content %}
+<div class="card shadow">
+  <div class="card-body">
+    <h3 class="card-title">
+      {% if object %}Edit Product{% else %}Add New Product{% endif %}
+    </h3>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-success mt-3">Save</button>
+      <a href="{% url 'product-list' %}" class="btn btn-secondary mt-3">Cancel</a>
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'textile/base.html' %}
+{% block content %}
+<div class="card shadow">
+  <div class="card-body">
+    <h3 class="card-title">{{ object.name }}</h3>
+    <p class="card-text"><strong>Fabric:</strong> {{ object.fabric_type }}</p>
+    <p class="card-text"><strong>Color:</strong> {{ object.color }}</p>
+    <p class="card-text"><strong>Price:</strong> ${{ object.price }}</p>
+    <p class="card-text"><strong>Stock:</strong> {{ object.stock }}</p>
+  </div>
+  <div class="card-footer text-end">
+    <a href="{% url 'product-update' object.pk %}" class="btn btn-warning">Edit</a>
+    <a href="{% url 'product-delete' object.pk %}" class="btn btn-danger">Delete</a>
+    <a href="{% url 'product-list' %}" class="btn btn-secondary">Back</a>
+  </div>
+</div>
+{% endblock %}
